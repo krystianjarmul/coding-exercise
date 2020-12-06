@@ -8,7 +8,8 @@ class BathtubTests(unittest.TestCase):
 
     def setUp(self):
         self.attrs = {'colour': 'white',
-                      'brand': 'Test'}
+                      'brand': 'Test',
+                      'material': 'acrylic'}
 
     def test_colour(self):
         """Test that raise ValueError if colour of bathtub is not a string"""
@@ -19,6 +20,12 @@ class BathtubTests(unittest.TestCase):
     def test_brand(self):
         """Test that raise ValueError if brand of bathtub is not a string"""
         self.attrs['brand'] = []
+        with self.assertRaises(ValueError):
+            Bathtub(**self.attrs)
+
+    def test_material(self):
+        """Test that raise ValueError if material of bathtub is not a string"""
+        self.attrs['material'] = (1, 2)
         with self.assertRaises(ValueError):
             Bathtub(**self.attrs)
 
