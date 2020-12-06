@@ -1,5 +1,7 @@
 import unittest
 
+from bathtub import Bathtub
+
 
 class BathtubTests(unittest.TestCase):
     """Tests for a bathtub object"""
