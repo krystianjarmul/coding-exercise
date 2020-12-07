@@ -36,7 +36,7 @@ class Bathtub:
 
     def use(self) -> None:
         """Take a bath"""
-        pass
+        print('Taking a bath...')
 
     @property
     def colour(self) -> str:
