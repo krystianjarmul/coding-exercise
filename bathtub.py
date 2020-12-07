@@ -1,6 +1,11 @@
 import typing as tp
 
 
+class BathtubError(Exception):
+    """A Exception raised when bathtub operation is invalid"""
+    pass
+
+
 class Bathtub:
     """Class representing a bathtub object"""
 

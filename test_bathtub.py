@@ -1,6 +1,6 @@
 import unittest
 
-from bathtub import Bathtub
+from bathtub import Bathtub, BathtubError
 
 
 class BathtubTests(unittest.TestCase):
