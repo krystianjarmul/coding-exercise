@@ -189,7 +189,7 @@ class BathtubTests(unittest.TestCase):
 
     @mock.patch('builtins.print')
     def test_use_bathtub_successfully(self, bath_mock):
-        """Test taking a bath"""
+        """Test taking a bath successfully"""
         self.bathtub.put_stopper()
         self.bathtub.fill()
 
