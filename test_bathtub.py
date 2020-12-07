@@ -101,6 +101,16 @@ class BathtubTests(unittest.TestCase):
         self.assertEqual(str(e.exception),
                          'Invalid value of height. Positive integer required.')
 
+    def test_height_correct_value(self):
+        """Test that raise ValueError if height value is not positive"""
+        self.attrs['height'] = 0
+        with self.assertRaises(ValueError) as e:
+            Bathtub(**self.attrs)
+            self.attrs['height'] = -3
+            Bathtub(**self.attrs)
+        self.assertEqual(str(e.exception),
+                         'Invalid value of height. Positive integer required.')
+
 
 if __name__ == '__main__':
     unittest.main()
