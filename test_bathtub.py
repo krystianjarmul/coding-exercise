@@ -120,6 +120,16 @@ class BathtubTests(unittest.TestCase):
         self.assertEqual(str(e.exception),
                          'Invalid value of capacity. Positive integer required.')
 
+    def test_capacity_correct_value(self):
+        """Test that raise ValueError if capacity value is not positive"""
+        self.attrs['capacity'] = 0
+        with self.assertRaises(ValueError) as e:
+            Bathtub(**self.attrs)
+            self.attrs['capacity'] = -3
+            Bathtub(**self.attrs)
+        self.assertEqual(str(e.exception),
+                         'Invalid value of capacity. Positive integer required.')
+
 
 if __name__ == '__main__':
     unittest.main()
