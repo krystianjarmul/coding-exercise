@@ -21,6 +21,7 @@ class Bathtub:
         self.capacity = capacity
         self.has_stopper_in = False
         self.is_filled = False
+        self.is_empty = True
 
     def put_stopper(self) -> None:
         """Put stopper to the bathtub"""
@@ -44,6 +45,7 @@ class Bathtub:
         """Empty the bathtub"""
         if not self.is_filled:
             raise BathtubError('Bathtub is not filled.')
+
 
     @property
     def colour(self) -> str:
