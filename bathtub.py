@@ -95,7 +95,7 @@ class Bathtub:
 
     @capacity.setter
     def capacity(self, value: tp.Any) -> None:
-        if not isinstance(value, int):
+        if not isinstance(value, int) or value <= 0:
             raise ValueError(
                 'Invalid value of capacity. Positive integer required.')
         self._capacity = value
