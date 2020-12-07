@@ -14,6 +14,7 @@ class Bathtub:
         self.width = width
         self.height = height
         self.capacity = capacity
+        self.has_stopper_in = False
 
     def put_stopper(self):
         """Put stopper to the bathtub"""
