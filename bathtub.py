@@ -32,6 +32,7 @@ class Bathtub:
         """Run a bath"""
         if not self.has_stopper_in:
             raise BathtubError('Stopper is not inserted.')
+        self.is_full = True
 
     @property
     def colour(self) -> str:
