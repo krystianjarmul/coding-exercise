@@ -40,6 +40,10 @@ class Bathtub:
             raise BathtubError('Bathtub is not filled.')
         print('Taking a bath...')
 
+    def empty(self) -> None:
+        """Empty the bathtub"""
+        pass
+
     @property
     def colour(self) -> str:
         return self._colour
