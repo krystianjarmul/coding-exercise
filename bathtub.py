@@ -48,5 +48,6 @@ class Bathtub:
     @weight.setter
     def weight(self, value: tp.Any) -> None:
         if not isinstance(value, int):
-            raise ValueError
+            raise ValueError(
+                'Invalid value of weight. Positive integer required.')
         self._weight = value
