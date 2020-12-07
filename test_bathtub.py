@@ -15,6 +15,7 @@ class BathtubTests(unittest.TestCase):
                       'width': 700,
                       'height': 400,
                       'capacity': 180}
+        self.bathtub = Bathtub(**self.attrs)
 
     def test_colour_value_type(self):
         """Test that raise ValueError if colour of bathtub is not a string"""
@@ -129,6 +130,12 @@ class BathtubTests(unittest.TestCase):
             Bathtub(**self.attrs)
         self.assertEqual(str(e.exception),
                          'Invalid value of capacity. Positive integer required.')
+
+    def test_put_stopper_successfully(self):
+        """Test putting a stopper to the bathtub when it's empty"""
+        self.bathtub.put_stopper()
+
+        self.assertTrue(self.bathtub.has_stopper_in)
 
 
 if __name__ == '__main__':
