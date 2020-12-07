@@ -38,7 +38,7 @@ class Bathtub:
     @material.setter
     def material(self, value: tp.Any) -> None:
         if not isinstance(value, str):
-            raise ValueError
+            raise ValueError('Invalid value of material. String required.')
         self._material = value
 
     @property
