@@ -18,7 +18,7 @@ class Bathtub:
 
     def put_stopper(self):
         """Put stopper to the bathtub"""
-        pass
+        self.has_stopper_in = True
 
     @property
     def colour(self) -> str:
