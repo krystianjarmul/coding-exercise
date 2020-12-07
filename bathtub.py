@@ -18,7 +18,7 @@ class Bathtub:
     @colour.setter
     def colour(self, value: tp.Any) -> None:
         if not isinstance(value, str):
-            raise ValueError
+            raise ValueError('Invalid value of colour. String required.')
         self._colour = value
 
     @property
