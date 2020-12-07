@@ -23,6 +23,8 @@ class Bathtub:
 
     def put_stopper(self):
         """Put stopper to the bathtub"""
+        if self.has_stopper_in:
+            raise BathtubError('Stopper is already in.')
         self.has_stopper_in = True
 
     @property
