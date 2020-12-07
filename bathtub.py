@@ -21,7 +21,7 @@ class Bathtub:
         self.capacity = capacity
         self.has_stopper_in = False
 
-    def put_stopper(self):
+    def put_stopper(self) -> None:
         """Put stopper to the bathtub"""
         if self.has_stopper_in:
             raise BathtubError('Stopper is already in.')
