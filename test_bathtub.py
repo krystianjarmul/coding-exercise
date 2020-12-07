@@ -137,6 +137,14 @@ class BathtubTests(unittest.TestCase):
 
         self.assertTrue(self.bathtub.has_stopper_in)
 
+    def test_put_stopper_fails(self):
+        """Test putting a stopper raise BathtubError when it's already in"""
+        self.bathtub.has_stopper_in = True
+
+        with self.assertRaises(BathtubError) as e:
+            self.bathtub.put_stopper()
+
+
 
 if __name__ == '__main__':
     unittest.main()
