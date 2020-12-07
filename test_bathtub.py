@@ -220,6 +220,7 @@ class BathtubTests(unittest.TestCase):
         self.bathtub.empty()
 
         self.assertTrue(self.bathtub.is_empty)
+        self.assertFalse(self.bathtub.is_filled)
 
 
 if __name__ == '__main__':
