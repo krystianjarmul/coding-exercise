@@ -163,7 +163,7 @@ class BathtubTests(unittest.TestCase):
 
         self.assertTrue(self.bathtub.has_stopper_in)
 
-    def test_put_stopper_already_in(self):
+    def test_put_stopper_fails(self):
         """Test putting a stopper raise BathtubError when it's already in"""
         self.bathtub.has_stopper_in = True
 
@@ -179,7 +179,7 @@ class BathtubTests(unittest.TestCase):
 
         self.assertEqual(str(e.exception), 'Stopper is not inserted.')
 
-    def test_fill_successfully(self):
+    def test_fill_with_stopper(self):
         """Test running a bath with stopper is successful"""
         self.bathtub.put_stopper()
 
@@ -188,8 +188,8 @@ class BathtubTests(unittest.TestCase):
         self.assertTrue(self.bathtub.is_filled)
 
     @mock.patch('builtins.print')
-    def test_use_bathtub_successfully(self, bath_mock):
-        """Test taking a bath successfully"""
+    def test_use_filled_bathtub(self, bath_mock):
+        """Test taking a bath in filled bathtub"""
         self.bathtub.put_stopper()
         self.bathtub.fill()
 
@@ -197,12 +197,13 @@ class BathtubTests(unittest.TestCase):
 
         bath_mock.assert_called_once()
 
-    def test_use_bathtub_unsuccessfully(self):
+    def test_use_not_filled_bathtub(self):
         """Test taking a bath raise BathtubError if a bathtub is not filled"""
         with self.assertRaises(BathtubError) as e:
             self.bathtub.use()
 
         self.assertEqual(str(e.exception), 'Bathtub is not filled.')
+
 
 
 if __name__ == '__main__':
