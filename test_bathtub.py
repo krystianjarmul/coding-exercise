@@ -39,8 +39,10 @@ class BathtubTests(unittest.TestCase):
     def test_weight(self):
         """Test that raise ValueError if weight of bathtub is not a integer"""
         self.attrs['weight'] = 'test'
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as e:
             Bathtub(**self.attrs)
+        self.assertEqual(str(e.exception),
+                         'Invalid value of weight. Positive integer required.')
 
 
 if __name__ == '__main__':
