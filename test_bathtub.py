@@ -222,6 +222,15 @@ class BathtubTests(unittest.TestCase):
         self.assertTrue(self.bathtub.is_empty)
         self.assertFalse(self.bathtub.is_filled)
 
+    def test_empty_only_stopper(self):
+        """Test draining a bathtub if there's only stopper, not filled"""
+        self.bathtub.put_stopper()
+
+        self.bathtub.empty()
+
+        self.assertTrue(self.bathtub.is_empty)
+        self.assertFalse(self.bathtub.is_filled)
+
 
 if __name__ == '__main__':
     unittest.main()
