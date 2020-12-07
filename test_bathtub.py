@@ -49,6 +49,8 @@ class BathtubTests(unittest.TestCase):
         self.attrs['weight'] = -5
         with self.assertRaises(ValueError) as e:
             Bathtub(**self.attrs)
+            self.attrs['weight'] = 0
+            Bathtub(**self.attrs)
         self.assertEqual(str(e.exception),
                          'Invalid value of weight. Positive integer required.')
 
