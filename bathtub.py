@@ -83,7 +83,7 @@ class Bathtub:
 
     @height.setter
     def height(self, value: tp.Any) -> None:
-        if not isinstance(value, int):
+        if not isinstance(value, int) or value <= 0:
             raise ValueError(
                 'Invalid value of height. Positive integer required.')
         self._height = value
