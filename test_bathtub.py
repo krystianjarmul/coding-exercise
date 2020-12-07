@@ -12,7 +12,8 @@ class BathtubTests(unittest.TestCase):
                       'material': 'acrylic',
                       'weight': 19,
                       'length': 1500,
-                      'width': 700, }
+                      'width': 700,
+                      'height': 400, }
 
     def test_colour_value_type(self):
         """Test that raise ValueError if colour of bathtub is not a string"""
@@ -91,6 +92,14 @@ class BathtubTests(unittest.TestCase):
             Bathtub(**self.attrs)
         self.assertEqual(str(e.exception),
                          'Invalid value of width. Positive integer required.')
+
+    def test_height_value_type(self):
+        """Test that raise ValueError if height of bathtub is not a integer"""
+        self.attrs['height'] = ['test']
+        with self.assertRaises(ValueError) as e:
+            Bathtub(**self.attrs)
+        self.assertEqual(str(e.exception),
+                         'Invalid value of height. Positive integer required.')
 
 
 if __name__ == '__main__':

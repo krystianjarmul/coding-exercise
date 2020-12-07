@@ -71,7 +71,7 @@ class Bathtub:
 
     @width.setter
     def width(self, value: tp.Any) -> None:
-        if not isinstance(value, int):
+        if not isinstance(value, int) or value <= 0:
             raise ValueError(
                 'Invalid value of width. Positive integer required.')
         self._width = value
