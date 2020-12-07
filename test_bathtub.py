@@ -23,8 +23,10 @@ class BathtubTests(unittest.TestCase):
     def test_brand(self):
         """Test that raise ValueError if brand of bathtub is not a string"""
         self.attrs['brand'] = []
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as e:
             Bathtub(**self.attrs)
+        self.assertEqual(str(e.exception),
+                         'Invalid value of colour. String required.')
 
     def test_material(self):
         """Test that raise ValueError if material of bathtub is not a string"""
