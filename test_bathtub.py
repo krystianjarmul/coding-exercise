@@ -194,6 +194,13 @@ class BathtubTests(unittest.TestCase):
 
         bath_mock.assert_called_once()
 
+    def test_use_bathtub_unsuccessfully(self):
+        """Test taking a bath raise BathtubError if a bathtub is not filled"""
+        with self.assertRaises(BathtubError) as e:
+            self.bathtub.use()
+
+        self.assertEqual(str(e.exception), 'Bathtub is not filled.')
+
 
 if __name__ == '__main__':
     unittest.main()
