@@ -1,4 +1,5 @@
 import unittest
+from unittest import mock
 
 from bathtub import Bathtub, BathtubError
 
@@ -185,6 +186,13 @@ class BathtubTests(unittest.TestCase):
         self.bathtub.fill()
 
         self.assertTrue(self.bathtub.is_full)
+
+    @mock.patch('builtins.print')
+    def test_use_bathtub_succesfully(self, bath_mock):
+        """Test taking a bath"""
+        self.bathtub.use()
+
+        bath_mock.assert_called_once()
 
 
 if __name__ == '__main__':
