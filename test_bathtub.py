@@ -151,6 +151,14 @@ class BathtubTests(unittest.TestCase):
             self.bathtub.fill()
         self.assertEqual(str(e.exception), 'Stopper is not inserted.')
 
+    def test_fill_successfully(self):
+        """Test running a bath with stopper is successful"""
+        self.bathtub.put_stopper()
+
+        self.bathtub.fill()
+
+        self.assertTrue(self.bathtub.is_full)
+
 
 if __name__ == '__main__':
     unittest.main()
