@@ -28,7 +28,7 @@ class Bathtub:
     @brand.setter
     def brand(self, value: tp.Any) -> None:
         if not isinstance(value, str):
-            raise ValueError
+            raise ValueError('Invalid value of brand. String required.')
         self._brand = value
 
     @property
