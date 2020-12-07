@@ -44,7 +44,7 @@ class Bathtub:
 
     def empty(self) -> None:
         """Empty the bathtub"""
-        if not self.is_filled:
+        if not self.has_stopper_in:
             raise BathtubError('Bathtub is not filled.')
         self.is_filled = False
         self.is_empty = True
