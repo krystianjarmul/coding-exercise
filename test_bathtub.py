@@ -49,7 +49,7 @@ class BathtubTests(unittest.TestCase):
                          'Invalid value of material. String required.')
 
     def test_weight_value_type(self):
-        """Test that raise ValueError if weight of bathtub is not a integer"""
+        """Test that raise ValueError if weight of bathtub is not an integer"""
         self.attrs['weight'] = 'test'
 
         with self.assertRaises(ValueError) as e:
@@ -71,7 +71,7 @@ class BathtubTests(unittest.TestCase):
                          'Invalid value of weight. Positive integer required.')
 
     def test_length_value_type(self):
-        """Test that raise ValueError if length of bathtub is not a integer"""
+        """Test that raise ValueError if length of bathtub is not an integer"""
         self.attrs['length'] = ''
 
         with self.assertRaises(ValueError) as e:
@@ -93,7 +93,7 @@ class BathtubTests(unittest.TestCase):
                          'Invalid value of length. Positive integer required.')
 
     def test_width_value_type(self):
-        """Test that raise ValueError if width of bathtub is not a integer"""
+        """Test that raise ValueError if width of bathtub is not an integer"""
         self.attrs['width'] = ''
 
         with self.assertRaises(ValueError) as e:
@@ -114,7 +114,7 @@ class BathtubTests(unittest.TestCase):
                          'Invalid value of width. Positive integer required.')
 
     def test_height_value_type(self):
-        """Test that raise ValueError if height of bathtub is not a integer"""
+        """Test that raise ValueError if height of bathtub is not an integer"""
         self.attrs['height'] = ['test']
 
         with self.assertRaises(ValueError) as e:
@@ -136,7 +136,7 @@ class BathtubTests(unittest.TestCase):
                          'Invalid value of height. Positive integer required.')
 
     def test_capacity_value_type(self):
-        """Test that raise ValueError if capacity of bathtub isn't a integer"""
+        """Test that raise ValueError if capacity of bathtub isn't an integer"""
         self.attrs['capacity'] = (180,)
 
         with self.assertRaises(ValueError) as e:
@@ -188,7 +188,7 @@ class BathtubTests(unittest.TestCase):
         self.assertTrue(self.bathtub.is_full)
 
     @mock.patch('builtins.print')
-    def test_use_bathtub_succesfully(self, bath_mock):
+    def test_use_bathtub_successfully(self, bath_mock):
         """Test taking a bath"""
         self.bathtub.use()
 
