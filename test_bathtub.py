@@ -185,7 +185,7 @@ class BathtubTests(unittest.TestCase):
 
         self.bathtub.fill()
 
-        self.assertTrue(self.bathtub.is_full)
+        self.assertTrue(self.bathtub.is_filled)
 
     @mock.patch('builtins.print')
     def test_use_bathtub_successfully(self, bath_mock):

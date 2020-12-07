@@ -20,7 +20,7 @@ class Bathtub:
         self.height = height
         self.capacity = capacity
         self.has_stopper_in = False
-        self.is_full = False
+        self.is_filled = False
 
     def put_stopper(self) -> None:
         """Put stopper to the bathtub"""
@@ -32,11 +32,11 @@ class Bathtub:
         """Run a bath"""
         if not self.has_stopper_in:
             raise BathtubError('Stopper is not inserted.')
-        self.is_full = True
+        self.is_filled = True
 
     def use(self) -> None:
         """Take a bath"""
-        if not self.is_full:
+        if not self.is_filled:
             raise BathtubError('Bathtub is not filled.')
         print('Taking a bath...')
 
