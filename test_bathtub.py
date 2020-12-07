@@ -190,6 +190,9 @@ class BathtubTests(unittest.TestCase):
     @mock.patch('builtins.print')
     def test_use_bathtub_successfully(self, bath_mock):
         """Test taking a bath"""
+        self.bathtub.put_stopper()
+        self.bathtub.fill()
+
         self.bathtub.use()
 
         bath_mock.assert_called_once()
