@@ -143,7 +143,7 @@ class BathtubTests(unittest.TestCase):
 
         with self.assertRaises(BathtubError) as e:
             self.bathtub.put_stopper()
-
+        self.assertEqual(str(e.exception), 'Stopper is already in.')
 
 
 if __name__ == '__main__':
