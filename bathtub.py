@@ -4,8 +4,8 @@ import typing as tp
 class Bathtub:
     """Class representing a bathtub object"""
 
-    def __init__(self, colour: str, brand: str, material: str,
-                 weight: int, length: int, width: int, height: int) -> None:
+    def __init__(self, colour: str, brand: str, material: str, weight: int,
+                 length: int, width: int, height: int, capacity: int) -> None:
         self.colour = colour
         self.brand = brand
         self.material = material
@@ -13,6 +13,7 @@ class Bathtub:
         self.length = length
         self.width = width
         self.height = height
+        self.capacity = capacity
 
     @property
     def colour(self) -> str:
@@ -87,3 +88,14 @@ class Bathtub:
             raise ValueError(
                 'Invalid value of height. Positive integer required.')
         self._height = value
+
+    @property
+    def capacity(self) -> int:
+        return self._capacity
+
+    @capacity.setter
+    def capacity(self, value: tp.Any) -> None:
+        if not isinstance(value, int):
+            raise ValueError(
+                'Invalid value of capacity. Positive integer required.')
+        self._capacity = value
