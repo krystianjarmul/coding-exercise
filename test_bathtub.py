@@ -11,7 +11,7 @@ class BathtubTests(unittest.TestCase):
                       'brand': 'Test',
                       'material': 'acrylic',
                       'weight': 19,
-                      'length': 1500,}
+                      'length': 1500, }
 
     def test_colour_value_type(self):
         """Test that raise ValueError if colour of bathtub is not a string"""

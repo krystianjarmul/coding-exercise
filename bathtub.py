@@ -59,7 +59,7 @@ class Bathtub:
 
     @length.setter
     def length(self, value: tp.Any) -> None:
-        if not isinstance(value, int):
+        if not isinstance(value, int) or value <= 0:
             raise ValueError(
                 'Invalid value of length. Positive integer required.')
         self._length = value
