@@ -205,8 +205,8 @@ class BathtubTests(unittest.TestCase):
 
         self.assertEqual(str(e.exception), 'Bathtub is not filled.')
 
-    def test_empty_not_filled_bathtub(self):
-        """Test draining a bathtub raise BathtubError if it's not filled"""
+    def test_empty_no_stopper(self):
+        """Test draining a bathtub raise BathtubError if it hasn't stopper"""
         with self.assertRaises(BathtubError) as e:
             self.bathtub.empty()
 
