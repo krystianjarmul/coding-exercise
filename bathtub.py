@@ -15,6 +15,10 @@ class Bathtub:
         self.height = height
         self.capacity = capacity
 
+    def put_stopper(self):
+        """Put stopper to the bathtub"""
+        pass
+
     @property
     def colour(self) -> str:
         return self._colour
