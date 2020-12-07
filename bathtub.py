@@ -42,7 +42,8 @@ class Bathtub:
 
     def empty(self) -> None:
         """Empty the bathtub"""
-        pass
+        if not self.is_filled:
+            raise BathtubError('Bathtub is not filled.')
 
     @property
     def colour(self) -> str:
