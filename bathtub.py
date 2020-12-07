@@ -36,6 +36,8 @@ class Bathtub:
 
     def use(self) -> None:
         """Take a bath"""
+        if not self.is_full:
+            raise BathtubError('Bathtub is not filled.')
         print('Taking a bath...')
 
     @property
