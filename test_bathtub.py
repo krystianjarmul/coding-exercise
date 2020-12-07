@@ -82,6 +82,16 @@ class BathtubTests(unittest.TestCase):
         self.assertEqual(str(e.exception),
                          'Invalid value of width. Positive integer required.')
 
+    def test_width_correct_value(self):
+        """Test that raise ValueError if width value is not positive"""
+        self.attrs['width'] = 0
+        with self.assertRaises(ValueError) as e:
+            Bathtub(**self.attrs)
+            self.attrs['width'] = -13
+            Bathtub(**self.attrs)
+        self.assertEqual(str(e.exception),
+                         'Invalid value of width. Positive integer required.')
+
 
 if __name__ == '__main__':
     unittest.main()
