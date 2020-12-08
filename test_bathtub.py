@@ -231,6 +231,11 @@ class BathtubTests(unittest.TestCase):
         self.assertTrue(self.bathtub.is_empty)
         self.assertFalse(self.bathtub.is_filled)
 
+    def test_bathtub_str(self):
+        """Test the bathtub string representation """
+        self.assertEqual(str(self.bathtub),
+                         'Test White Acrylic Bathtub - 1500x700mm')
+
 
 if __name__ == '__main__':
     unittest.main()
