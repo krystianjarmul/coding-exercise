@@ -133,3 +133,10 @@ class Bathtub:
             raise ValueError(
                 'Invalid value of capacity. Positive integer required.')
         self._capacity = value
+
+    def __str__(self) -> str:
+        return '{} {} {} Bathtub - {}x{}mm'.format(self.brand.title(),
+                                                   self.colour.title(),
+                                                   self.material.title(),
+                                                   self.length,
+                                                   self.width)
